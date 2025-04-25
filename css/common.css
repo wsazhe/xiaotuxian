@@ -75,7 +75,7 @@
     display: block;
     width: 207px;
     height: 70px;
-    background-image: url(../images/logo.png);
+    background-image: url(logo.png);
     background-size: contain;
 }
 /* 头部的导航栏部分 */
