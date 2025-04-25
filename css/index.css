@@ -1,0 +1,936 @@
+ /* 放index的样式  */
+/* 轮播图总体设置 */
+.lbt  {
+    height: 500px;
+    background-color: #f5f5f5;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: middle;
+}
+/* 轮播图的版心设置 */
+.lbt .wrapper {
+    position: relative;
+    height: 500px;
+    /* background-color: pink; */
+}
+
+ /* 侧导航栏 */
+.lbt .cdh {
+     position: absolute;
+     left: 0;
+     top: 0;
+     width: 250px;
+     height: 500px;
+     /* 背景要是透明的，能看到轮播图 */
+     background-color: rgba(0, 0, 0, 0.8);
+} 
+
+/* 侧导航栏的文字 */
+.lbt .cdh li{
+    height: 50px;
+    line-height: 50px;
+}
+.lbt .cdh a{
+    padding-left: 35px;
+    padding-right: 9px;
+    /* 用block,宽度和父级一样。用line-block,需要手动填写宽度 */
+    display: block;
+    height: 50px;
+    color: #fff;
+    /* 谁在after前面，谁就是after的父级，这里是a */
+    position: relative;
+}
+
+.lbt .cdh a span{
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+/* 鼠标触碰有颜色变化 */
+.lbt .cdh a:hover{
+    background-color: rgb(49, 235, 173);
+}
+.lbt .cdh a::after{
+    content: "";
+    width: 6px;
+    height: 11px;
+    background-image: url("../images/精灵图.PNG");
+    position: absolute;
+    /* background-color: blue; */
+    right:19px;
+    top: 19px;
+    background-position: -80px -110px;
+}  
+
+/* 轮播图的箭头标志 */  
+.prev,.next {
+    top: 228px;
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    background-color:rgba(0, 0, 0, 0.8);
+    background-image: url(../images/精灵图.PNG);
+    border-radius: 50%;
+}
+
+/* 单独设置水平位置和背景图的位置 */
+.prev {
+    background-position: 13px -59px;
+    left: 260px;
+}
+.next {
+    background-position: -22px -59px;
+    right: 10px;
+}
+
+
+/* 轮播图的圆点标志 */
+.lbt ol {
+    left: 680px;
+    bottom: 30px;
+    width: 200px;
+    height: 10px;
+    position: absolute;
+}
+.lbt ol li {
+    /* 横着排 */
+    float: left;
+    width: 10px;
+    height: 10px;
+    margin-right: 24px;
+    background-color: rgba(255,255,255,0.4);
+    /* 变圆 */
+    border-radius: 50%;
+    /* 把鼠标光标改成小手手 */
+    cursor: pointer;
+}
+/* 给active的li添加样式，表明为当前的圆点颜色就要加深 */
+.lbt ol .active {
+    background-color: #ffffff;
+}
+
+
+/* 新鲜好物区域 */
+.new-goods .title {
+    height: 114px;  
+    line-height: 114px;
+}
+.new-goods .title h2{
+    float: left;
+    /* 文字大小 */
+    font-size: 29px;
+    /* 文字粗细 */
+    font-weight: 400;
+    /* 防止内容浮动后溢出 */
+    height: 114px;
+}
+
+.new-goods .title span{
+    font-size: 16px;
+    margin-left: 34px;
+    color: #999;
+}
+.new-goods .title a{
+    /* 查看全部在右边 */
+    float: right;
+    color: #999;
+    font-size: 16px;
+}
+
+.new-goods .title a::after{
+    content: "";
+    width: 7px;
+    height: 13px;
+    display: inline-block;
+    background-image: url("../images/精灵图.PNG");
+    background-position: 0 -110px;
+    /* 精灵图和文字有间距，所以要加上margin-left */
+    margin-left: 13px;
+    /* 精灵图垂直居中 */
+    vertical-align: middle;
+}
+
+
+
+/* 清楚浮动影响布局 */
+/* .new-goods .content{
+    overflow: hidden;
+} */
+/* 新鲜好物的内容 */
+.new-goods .content li{
+    position: relative;
+    width: 304px;
+    height: 405px;
+    margin-right: 8px;
+    background-color: rgb(231, 252, 243);
+    float:left;
+    /* 居中 */
+    text-align: center;
+}
+.new-goods .content li:last-child{
+    margin-right: 0;    
+}
+/* 文字内容 */
+.new-goods .content li h3{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 400;
+}
+/* 图片内容 */
+.new-goods .content li img{
+    /* 与盒子高度一直，宽度自适应 */
+    width: 304px;
+}
+.new-goods .content li div{
+    color: rgb(237, 93, 93);
+    font-size: 17px;
+}
+.new-goods .content div span{
+    font-size: 23px;
+}
+.new-goods .content li b{
+    border-radius: 2px ;
+    font-size: 18px;
+    color: #27ba9b;
+    left: 17px;
+    top: 18px;
+    width: 28px;
+    height: 51px;
+    border: 1px solid #27ba9b;
+    font-weight: 400;
+    line-height: 24px;
+    position: absolute;
+}   
+/* 鼠标触碰有颜色变化 */
+.new-goods title a:hover{
+  color: #27ba9b ;
+}
+/* 鼠标触碰图片有边框变化 */
+.new-goods .content li:hover {
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  top: -3px;
+}
+
+
+
+
+/* 人气推荐 */
+.recommend .hd {
+    height: 114px;
+    /* background-color: pink; */
+    line-height: 114px;
+}
+
+.recommend .hd h2 {
+    float: left;
+    font-size: 29px;
+    font-weight: 400;
+    height: 114px;
+}
+
+.recommend .hd h2 span {
+    margin-left: 34px;
+    font-size: 16px;
+    color: #999;
+}
+
+.recommend .hd a {
+    float: right;
+    color: #999;
+
+}
+.recommend .hd a::after {
+    content: '';
+    display: inline-block;
+    margin-left: 13px;
+    width: 7px;
+    height: 13px;
+    /* background-color: green; */
+    background-image: url(../images/精灵图.PNG);
+    background-position: 0 -110px;
+    vertical-align: middle;
+}
+
+.recommend .bd li {
+    position: relative;
+    float: left;
+    margin-right: 8px;
+    width: 304px;
+    height: 405px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.recommend .bd li:nth-child(4n) {
+    margin-right: 0;
+}
+
+.recommend .bd li img {
+    width: 304px;
+}
+
+.recommend .bd li h3 {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.recommend .bd li div {
+    color: #9a2e1f;
+    font-size: 17px;
+}
+
+.recommend .bd li div span {
+    font-size: 13px;
+    color: #999;
+}
+
+
+/* 热门品牌 */
+.hot .hd {
+    height: 114px;
+    /* background-color: pink; */
+    line-height: 114px;
+}
+.hot .hd h2 {
+    float: left;
+    font-size: 29px;
+    font-weight: 400;
+    height: 114px;
+}
+.hot .hd h2 span {
+    margin-left: 34px;
+    font-size: 16px;
+    color: #999;
+}
+.hot .hd a {
+    float: right;
+    color: #999;
+    /* margin-left: 870px;
+    font-size: 16px; */
+}
+.hot .hd a::after {
+    content: '';
+    display: inline-block;
+    margin-left: 13px;
+    width: 14px;
+    height: 13px;
+    /* background-color: green; */
+    background-image: url(../images/精灵图.PNG);
+    background-position: 4px -109px;
+    vertical-align: middle;
+}
+.hot .hd a::after:hover {
+    background-color: skyblue;
+}
+.hot .bd li {
+    position: relative;
+    float: left;
+    margin-right: 8px;
+    width: 240px;
+    height: 319px;
+    text-align: center;
+}
+
+.hot .bd li:nth-child(5n) {
+    margin-right: 0;
+}
+
+.hot .bd li img {
+    width: 245px;
+}
+
+.hot .bd li h3 {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.hot .bd li div {
+    color: #9a2e1f;
+    font-size: 17px;
+}
+
+.hot .bd li div span {
+    font-size: 23px;
+}
+
+.hot .bd li b {
+    position: absolute;
+    left: 17px;
+    top: 18px;
+    width: 28px;
+    height: 51px;
+    border: 1px solid #27ba9b;
+    border-radius: 2px ;
+    font-size: 18px;
+    color: #27ba9b;
+    font-weight: 400;
+    /* 默认行高导致两个字之间稍微有一点远，可以设置行高,利用检查器进行调整 */
+    line-height: 24px;
+}
+
+/* 生鲜区域 */
+
+/* 生鲜标题 */
+.shengxian .hd {
+    height: 96px;
+    line-height: 96px;
+}
+
+.shengxian .hd h2 {
+    float: left;
+    /* 文字大小 */
+    font-size: 29px;
+    /* 文字粗细 */
+    font-weight: 400;
+}
+.shengxian .hd .all {
+    /* 在右边 */
+    float: right;
+    color: #999;
+}
+.shengxian .hd .all::after{
+    content: "";
+    width: 7px;
+    height: 13px;
+    display: inline-block;
+    background-image: url("../images/精灵图.PNG");
+    background-position: 0 -110px;
+    /* 精灵图和文字有间距，所以要加上margin-left */
+    margin-left: 13px;
+    /* 精灵图垂直居中 */
+    vertical-align: middle;
+}
+
+.shengxian .hd ul {
+    float: right;
+    margin-right: 65px;
+}
+/* 让ul的li水平排列 */
+.shengxian .hd ul li {
+    float: left;
+}
+
+.shengxian .hd li a {
+    /* 文字项左右有边距 */
+    padding: 2px 7px;
+    /* 各个li之间有边距 */
+    margin-left: 6px;
+}
+
+.shengxian .hd li a:hover {
+    background-color: #27ba9b;
+    color: #fff;
+}
+
+
+/* 左边的区域 */
+/* 生鲜模块 - 左侧固定区域 */
+
+
+/* 商品列表中的图片样式 */
+.shengxian .bd li .img-box {
+    height: 160px;          /* 固定图片高度 */
+    padding: 0 33px;        /* 左右内边距（可能用于居中） */
+    text-align: center;     /* 文字居中（对图片元素可能无效） */
+    margin: 0 auto;         /* 水平居中 */
+    display: table-cell;    /* 表格单元格显示方式 */
+    vertical-align: middle; /* 垂直居中 */
+}
+
+
+/* 单个商品项容器 */
+.shengxian .bd li {
+    width: 240px;           /* 固定宽度 */
+    height: 300px;          /* 固定高度 */
+    padding-top: 10px;      /* 顶部内边距 */
+    margin-left: 10px;      /* 左外边距 */
+    background-color: #ffffff; /* 白色背景 */
+    border: 1px solid rgb(250, 250, 250); /* 浅灰色边框 */
+    overflow: hidden;       /* 隐藏溢出内容 */
+    transition: 0.3s;      /* 过渡动画时长 */
+    position: relative;     /* 相对定位（用于子元素绝对定位） */
+    float: left;            /* 左浮动布局 */
+}
+
+/* 商品悬停效果 */
+.shengxian .bd li:hover {
+    border-color: #5eb69c;  /* 边框颜色变为绿色 */
+}
+.shengxian .bd li:hover .extra {
+    bottom: 0;              /* 底部弹出层升起 */
+}
+
+/* 商品链接样式 */
+.shengxian .bd a{
+    display: block;         /* 块级显示 */
+}
+
+/* 商品元信息区域 */
+.shengxian .bd .meta {
+    height: 130px;          /* 固定高度 */
+    line-height: 1.3;       /* 行高设置 */
+    padding: 10px 22px 0;   /* 内边距 */
+    font-size: 19px;        /* 基础字号 */
+    position: relative;     /* 相对定位 */
+}
+
+/* 商品名称样式 */
+.shengxian .bd .name {
+    word-break: break-all;  /* 允许单词断行 */
+    text-overflow: ellipsis; /* 文字溢出显示省略号 */
+    display: -webkit-box;    /* 旧版弹性盒模型 */
+    -webkit-box-orient: vertical; /* 垂直方向排列 */
+    -webkit-line-clamp: 2;  /* 限制显示2行 */
+    overflow: hidden;       /* 隐藏溢出内容 */
+}
+
+/* 价格样式 */
+.shengxian .bd .price {
+    font-size: 22px;        /* 大号字体 */
+    color: #9A2E1F;         /* 深红色 */
+    position: absolute;     /* 绝对定位 */
+    bottom: 10px;           /* 定位到底部 */
+}
+
+/* 价格符号小字 */
+.shengxian .bd .price small {
+    font-size: 17px;        /* 相对较小的字号 */
+}
+
+/* 底部弹出层（默认隐藏） */
+.shengxian .bd .extra {
+    width: 100%;            /* 全宽 */
+    height: 86px;           /* 固定高度 */
+    padding-top: 10px;      /* 顶部内边距 */
+    transition: bottom .3s; /* 底部位置过渡动画 */
+    background-color: #5EB69C; /* 绿色背景 */
+    position: absolute;     /* 绝对定位 */
+    bottom: -86px;          /* 初始隐藏位置 */
+}
+
+/* 弹出层内的文字元素 */
+.shengxian .bd .extra span {
+    display: block;         /* 块级显示 */
+    width: 124px;           /* 固定宽度 */
+    line-height: 1;         /* 行高设置 */
+    padding: 9px 0 8px;     /* 上下内边距 */
+    margin: 0 auto;         /* 水平居中 */
+    text-align: center;     /* 文字居中 */
+    font-size: 19px;        /* 字号 */
+    color: #fff;            /* 白色文字 */
+}
+
+/* 弹出层最后一个文字元素 */
+.shengxian .bd .extra span:last-child {
+    font-size: 13px;        /* 更小字号 */
+    border-top: 1px solid #fff; /* 顶部白色分割线 */
+}
+
+/* 商品标签样式 */
+.shengxian .bd .label {
+    position: absolute;     /* 绝对定位 */
+    left: 0;                /* 左侧对齐 */
+    bottom: 266px;          /* 距离底部位置 */
+    width: 188px;           /* 固定宽度 */
+    height: 66px;           /* 固定高度 */
+    text-align: center;     /* 文字居中 */
+    line-height: 66px;      /* 行高等于高度（垂直居中） */
+    color: #fff;            /* 白色文字 */
+    font-size: 17px;        /* 字号 */
+    border-radius: 0 2px 2px 0; /* 右侧圆角 */
+    background-color: rgba(0, 0, 0, 0.8); /* 半透明黑色背景 */
+    position: relative;     /* 相对定位（覆盖之前的绝对定位） */
+}
+
+/* 标签内的第一个span元素 */
+.shengxian .bd .label span:first-child {
+    display: block;         /* 块级显示 */
+    width: 76px;            /* 固定宽度 */
+    background-color: #000; /* 纯黑背景 */
+}
+
+/* 标签内的最后一个span元素 */
+.shengxian .bd .label span:last-child {
+    width: 112px;           /* 固定宽度 */
+    line-height: 1.4;       /* 行高设置 */
+    transform: translate(0, -50%); /* 垂直居中 */
+    position: absolute;     /* 绝对定位 */
+    left: 76px;             /* 右侧定位 */
+    right: 0;
+    top: 50%;               /* 垂直居中 */
+}
+
+/* 最后四个商品项的特殊样式 */
+.shengxian .bd li:nth-last-child(-n+4) {
+    margin-top: 10px;       /* 顶部外边距 */
+}
+.shengxian{
+    background-color: #f5f5f5;
+}
+
+/* 修改为网格系统 */
+.shengxian .bd li:first-child{
+    height: 610px;
+    padding-top: 0;
+    margin-left: 0;
+    border: 0;
+}
+
+
+.topic_goods .hd .all {
+    /* 在右边 */
+    float: right;
+    color: #999;
+}
+
+
+/* 最新专题 */
+/* 外层容器 */
+.topic_goods {
+    height: 512px;
+    background-color: #f5f5f5;
+  }
+  
+  /* 头部区域 */
+  .topic_goods .hd {
+    height: 115px;
+    line-height: 115px;
+  }
+  
+  .topic_goods .hd h3 {
+    float: left;
+    font-size: 29px;
+    font-weight: 400;
+  }
+  
+  /* 内容区域 */
+  .topic_goods .bd {
+    height: 356px;
+  }
+  
+  /* 商品项 */
+  .topic_goods .bd li {
+    position: relative;
+    float: left;
+    margin-right: 11px;
+  }
+  
+  .topic_goods .bd li:last-child {
+    margin-right: 0;
+  }
+  
+  /* 商品图片 */
+  .topic_goods .bd li img {
+    width: 406px;
+    height: 228px;
+  }
+  
+  /* 链接容器 */
+  .topic_goods .bd li a {
+    display: inline-block;
+    height: 295px;
+    background-color: white;
+  }
+  
+  /* 商品信息遮罩层 */
+  .topic_goods .bd li .box {
+    position: absolute;
+    bottom: 67px;
+    left: 0;
+    width: 406px;
+    height: 146px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0));
+  }
+  
+  /* 遮罩层文字 */
+  .topic_goods .bd li .box p {
+    position: absolute;
+    bottom: 46px;
+    left: 15px;
+    color: #fff;
+  }
+  
+  .topic_goods .bd li .box div {
+    position: absolute;
+    left: 14px;
+    bottom: 17px;
+    color: #999;
+  }
+  
+  /* 价格标签 */
+  .topic_goods .bd li .box span {
+    position: absolute;
+    bottom: 29px;
+    right: 15px;
+    width: 81px;
+    height: 27px;
+    background-color: #fff;
+    text-align: center;
+    color: #9a2e1f;
+  }
+  
+  /* 底部统计信息 */
+  .topic_goods .bd li .bottom {
+    line-height: 68px;
+  }
+  
+  /* 图标伪元素 */
+  .topic_goods .bd li .bottom span::before {
+    display: inline-block;
+    content: "";
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    background-image: url(../images/精灵图.PNG);
+  }
+  
+  /* 特殊样式 */
+  .topic_goods .bd li .bottom .red {
+    color: red;
+  }
+  
+  .topic_goods .bd li .bottom .right {
+    float: right;
+    margin-right: 19px;
+  }
+  .topic_goods .hd .all::after{
+    content: "";
+    width: 7px;
+    height: 13px;
+    display: inline-block;
+    background-image: url("../images/精灵图.PNG");
+    background-position: 0 -110px;
+    /* 精灵图和文字有间距，所以要加上margin-left */
+    margin-left: 13px;
+    /* 精灵图垂直居中 */
+    vertical-align: middle;
+}
+
+.topic_goods .hd .all {
+  /* 在右边 */
+  float: right;
+  color: #999;
+}
+
+/* 定义所有图标的基础样式 */
+.kong_hearts::before,
+.fill_heart::before,
+.eye::before,
+.message::before {
+  display: inline-block;
+  content: "";
+  width: 16px;         /* 图标实际宽度 */
+  height: 16px;        /* 图标实际高度 */
+  background-image: url(../images/精灵图.PNG);
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  margin-right: 4px;   /* 图标和文字间距 */
+}
+
+/* 指定每个图标的位置 */
+.kong_hearts::before {  /* 1220前的爱心图标 */
+  background-position: -120px -110px;      /* 根据精灵图坐标调整 */
+}
+
+.eye::before {           /* 1800前的眼睛图标 */
+  background-position: -160px -110px;  /* 向右偏移一个图标宽度 */
+}
+
+.message::before {     /* 246前的消息图标 */
+  background-position: -200px -110px;  /* 再偏移一个图标宽度 */
+}
+
+/* 红色爱心特殊状态 */
+.fill_heart::before {         /* 第二个商品的红心 */
+  background-position: -240px -110px;  /* 第四个图标位置 */
+}
+
+/* 修复原有冲突样式 */
+.topic_goods .bd li .bottom span::before {
+  background-image: none; /* 禁用原通用精灵图定义 */
+}
+
+
+
+/* 基础服务容器样式 */
+.info_service {
+  padding: 79px 0 79px 58px;  /* 内边距：上 79px 下 79px 左 58px */
+  height: 302px;             /* 固定高度 */
+  text-align: center;        /* 内容居中 */
+  color: #999;               /* 默认文字颜色 */
+  font-size: 14px;           /* 基础字号 */
+}
+
+/* 标题通用样式 */
+.info_service h4 {
+  font-weight: 400;          /* 常规字体粗细 */
+}
+
+/* 客户服务区块 */
+.info_service .customer,
+.info_service .about {
+  float: left;               /* 左浮动布局 */
+  margin-right: 118px;      /* 右侧外边距 */
+  width: 192px;             /* 固定宽度 */
+  height: 143px;            /* 固定高度 */
+}
+
+/* 客户服务标题间距 */
+.info_service .customer h4,
+.info_service .about h4 {
+  margin-bottom: 30px;      /* 标题下边距 */
+}
+
+/* 链接悬浮效果 */
+.info_service .customer li a,
+.info_service .about li a {
+  float: left;              /* 左浮动布局 */
+  margin-right: 3px;        /* 右侧间距 */
+  padding-top: 15px;        /* 顶部内边距 */
+  width: 93px;              /* 固定宽度 */
+  height: 93px;             /* 固定高度 */
+  border: 1px solid #eee;   /* 浅灰色边框 */
+  color: #999;              /* 默认文字颜色 */
+}
+
+/* 链接悬浮状态 */
+.info_service .customer li a:hover,
+.info_service .about li a:hover {
+  color: #27ba9b;           /* 品牌绿色 */
+}
+
+/* 特殊字号样式 */
+.info_service .customer .size,
+.info_service .about .size {
+  color: #666;              /* 深灰色文字 */
+  font-size: 29px;          /* 大号字体 */
+}
+
+/* 下载区块样式 */
+.info_service .download {
+  float: left;              /* 左浮动布局 */
+  width: 274px;             /* 固定宽度 */
+  height: 189px;            /* 固定高度 */
+  border-right: 2px solid #f2f2f2;  /* 右侧分隔线 */
+}
+
+/* 下载标题间距 */
+.info_service .download h4 {
+  margin-bottom: 24px;      /* 标题下边距 */
+}
+
+/* 左半部分布局 */
+.info_service .download .left {
+  float: left;              /* 左浮动 */
+  position: relative;       /* 相对定位 */
+  width: 116px;             /* 固定宽度 */
+  height: 116px;            /* 固定高度 */
+  border: 2px solid #f3f3f3; /* 浅灰色边框 */
+}
+
+/* 超大数字样式 */
+.info_service .download .size {
+  position: absolute;       /* 绝对定位 */
+  top: -20px;               /* 上偏移定位 */
+  left: 0;                  /* 左对齐 */
+  font-size: 105px;         /* 超大字号 */
+  color: #000;              /* 纯黑色 */
+}
+
+/* 右半部分布局 */
+.info_service .download .right {
+  float: right;             /* 右浮动 */
+  margin-right: 20px;       /* 右侧外边距 */
+  width: 116px;             /* 固定宽度 */
+  height: 116px;            /* 固定高度 */
+}
+
+/* 下载按钮样式 */
+.info_service .download a {
+  display: inline-block;    /* 行内块元素 */
+  margin-top: 40px;         /* 顶部外边距 */
+  width: 103px;             /* 固定宽度 */
+  height: 32px;             /* 固定高度 */
+  text-align: center;       /* 文字居中 */
+  line-height: 32px;        /* 垂直居中 */
+  color: #999;              /* 默认文字颜色 */
+}
+
+/* 按钮悬浮状态 */
+.info_service .download a:hover {
+  color: #fff;              /* 白色文字 */
+  background-color: #27ba9b; /* 品牌绿色背景 */
+}
+
+/* 联系电话区块 */
+.info_service .phone {
+  float: right;             /* 右浮动布局 */
+  margin-right: 76px;       /* 右侧外边距 */
+  width: 160px;             /* 固定宽度 */
+  height: 122px;            /* 固定高度 */
+}
+
+/* 电话标题间距 */
+.info_service .phone h4 {
+  margin-bottom: 46px;      /* 标题下边距 */
+}
+
+/* 电话号码样式 */
+.info_service .phone span {
+  font-size: 22px;          /* 大号字体 */
+  color: #666;              /* 深灰色文字 */
+}
+
+/* 描述文字样式 */
+.info_service .phone p {
+  font-size: 15px;          /* 中等字号 */
+}
+
+
+/* 定义所有图标的基础样式 */
+.kefu::before,
+.gongzhonghao::before,
+.fankui::before,
+.weibo::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 30px;
+  margin: 0 auto 8px;
+  background-image: url(../images/精灵图.PNG);
+  background-size: 400px 400px;/
+}
+
+/* 指定每个图标的位置 */
+.kefu::before { 
+  background-position: -245px -70px; 
+}
+
+.gongzhonghao::before {         
+  background-position: -247px -15px;  /* 向右偏移一个图标宽度 */
+}
+
+.fankui::before {    
+  background-position: -345px -70px;  /* 再偏移一个图标宽度 */
+}
+.weibo::before {    
+  background-position: -347px -15px;;  /* 再偏移一个图标宽度 */
+}
+
+.left::before {
+  content: '';
+  display: block;
+  width: 80%; /* 或者指定一个具体的宽度 */
+  height: 80%; /* 或者指定一个具体的高度 */
+  background-image: url(../images/qrcode.png);
+  margin-top: 12px;
+  margin-left: 12px;
+  background-size: cover; /* 如果有背景图片，确保它适应容器 */
+}

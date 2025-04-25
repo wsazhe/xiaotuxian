@@ -1,0 +1,245 @@
+/* 各个页面相同的样式表 */
+/* 版心 */
+.wrapper {
+    width: 1240px;
+    margin: 0 auto;
+}
+
+
+/* <!-- 黑色顶部导航栏 --> */
+.black-sc{
+    height: 52px;
+    background-color: #333;
+}
+
+.black-sc .wrapper{
+    height: 52px;
+}
+
+/* 盒子里的字都是默认出现在左边，要想让字到右边，可以用float:right */
+.black-sc .wrapper ul{
+    float:right;
+}
+
+/* 因为都在一横排，需要把列表元素向左浮动一下，使得字显示在右边 */
+.black-sc .wrapper li{
+    float:left;
+    /* 垂直居中（与盒子高度一样大） */
+    line-height:52px;
+}   
+
+/* 各个链接之间的距离以及小竖杠 */
+.black-sc .wrapper a{
+    padding: 0 16px;
+    border-right: 1px solid #666;
+    font-size: 14px;
+    color: #d4d4d4;
+}
+/* 精灵图标 */
+.black-sc .wrapper a span{
+    /*因为精灵图本身是一张图片，但是要设置成一个小图标，
+    所以需要设置宽高。要用inline-block来实现 */
+    display: inline-block;
+    width: 11px;
+    height: 16px;
+    background-image: url(../images/精灵图.PNG);
+    /* 找到手机的位置 */
+    background-position:-160px -70px;
+
+    /* 发现图片和文字不对齐，用vertical-align:middle来解决 */
+    /* 它可以专治文字和图片垂直对齐问题 */
+    vertical-align: middle;
+
+    /* 图片和文字之间的距离 */
+    margin-right: 8px;
+}
+/* 鼠标悬停时，文字颜色变成蓝色 */
+.black-sc .wrapper a:hover{
+    color: #27ba9b;
+}
+
+/* 头部部分 */
+.header{
+    margin:30px auto;
+    height: 70px;
+}
+
+/* 头部的logo部分*/
+.logo{
+    float: left;
+    width: 207px;
+    height: 70px;
+}
+.logo a{
+    /* 因为是图片,需要设置成块状，可以设置宽高 */
+    display: block;
+    width: 207px;
+    height: 70px;
+    background-image: url(../images/logo.png);
+    background-size: contain;
+}
+/* 头部的导航栏部分 */
+.dhl{
+    float: left;
+    height: 70px;
+    margin-left: 40px;
+}
+.dhl li{
+    float: left;
+    /* 各个选项之间有距离 */
+    margin-right:48px;
+    line-height: 70px;
+}
+.dhl li a{
+    /* 文字和下划线有距离 */
+    padding-bottom: 7px;
+}
+.dhl li a:hover{
+    color:rgb(165, 241, 216);
+    border-bottom: 1px solid rgb(165, 241, 216);
+}
+/* 头部的搜索栏部分 */
+.search{
+    position: relative;
+    float: left;
+    width: 172px;
+    margin-top: 20px;
+    margin-left: 34px;
+    height: 30px;
+    border-bottom: 2px solid #e7e7e7;
+}
+.search input{
+    width: 172px;
+    /* 这个的高度不能和上面的高度一样，否则会出现边边消失的情况 */
+    height:28px;
+    padding-left:30px;
+}
+.search input::placeholder{
+    font-size: 14px;
+    color: #ccc;
+}
+/* 放大镜图标 */
+.search span{
+    display: inline-block;
+    /* 放大镜总是在搜索框的最左边，用定位解决 */
+    position: absolute;
+    left:2px;
+    top:4px;
+    width: 18px;
+    height: 18px; 
+    background-image: url(../images/精灵图.PNG);
+    background-position: -79px -69px;
+}
+/* 头部的购物车部分 */
+.shopcar{
+    position: relative;
+    width: 23px;
+    height: 23px;
+    background-image: url(../images/精灵图.PNG);
+    background-position: -119px -69px;
+    float: left;
+    margin-left: 15px;
+    margin-top:25px;
+}
+.shopcar span{
+    position: absolute;
+    width: 20px;
+    height: 15px;
+    top:-6px;
+    right:-13px;
+    border-radius: 8px;
+    background-color: rgb(237, 114, 114);
+    font-size: 13px;
+    color: #fff;
+    text-align: center;
+    line-height: 15px;
+    /* 垂直居中 */
+}
+/* 其中float的作用指定一个元素应沿其容器的左侧或右侧放置，
+允许文本和内联元素环绕它 */
+
+/* 底部部分 */
+.footer{
+    height: 342px;
+    background-color: #333;
+}
+/* 底部的版心与上面不一样，需要重新设置 */
+.footer .wrapper{
+    width: 1393px;
+}
+/* 底部的上半部分 */
+.footer .top{
+    height: 175px;
+    border-bottom: 3px solid #666;
+    padding-top: 59px;
+    padding-left: 135px;
+}
+.footer .top li{
+    float: left;
+    width: 195px;
+    height: 58px;
+    position: relative;
+    /* 每个内容之间都有距离 */
+    margin-right: 300px;
+    line-height: 58px;
+}
+/* 最后一个li没有右边距，因为它是最后一个元素，不需要右边距。 */
+.footer .top li:last-child{
+    margin-right: 0;
+}
+
+/* ::before 创建一个伪元素，其将成为匹配选中的元素的第一个子元素。
+通过 content 属性来为一个元素添加修饰性的内容。此元素默认是行级的。 */
+.footer .top li::before{
+    position: absolute;
+    top:0;
+    left:0;
+    content: '';
+    height: 58px;
+    width: 58px;
+    background-image: url(../images/精灵图.PNG);
+    /* vertical-align: middle; 确保了图标和后续文本在垂直方向上居中对齐 */
+    vertical-align: middle;
+    display: inline-block;
+}
+.footer .top li span{
+    font-size: 28px;
+    color: #fff;
+    /* 垂直居中 */
+    line-height: 58px;
+    margin-left: 77px;
+}
+
+/* 第二,第三个li里面的before添加背景图位置属性 */
+/* nth-child() 伪类根据元素在父元素的子元素列表中的索引来选择元素 */
+.footer .top li:nth-child(2)::before{
+    background-position: -64px 0px;
+}
+.footer .top li:nth-child(3)::before{
+    background-position: -130px 0;
+}
+
+/* 底部的下半部分 */
+.footer .bottom{
+    padding-top: 40px;
+    font-size: 14px;
+    color: #999;
+    text-align: center;
+}
+.footer .bottom a {
+    font-size: 14px;
+    color: #999;
+}
+/* 两段文字之间有距离 */
+.footer .bottom p{
+    margin-bottom:20px ;
+}
+
+.bd li {
+    /* 初始状态 */
+    transition: transform 0.3s, box-shadow 0.3s; /* 动画过渡设置 */
+  }
+.bd li:hover {
+    transform: translateY(-5px);          /* 向上移动5像素 */
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12); /* 阴影增强 */
+  }
